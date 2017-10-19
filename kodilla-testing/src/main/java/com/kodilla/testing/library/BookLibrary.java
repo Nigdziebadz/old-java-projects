@@ -21,12 +21,6 @@ public class BookLibrary {
     }
 
     public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
-        List<Book> borrowedBookList = new ArrayList<>();
-        List<Book> secondResultList = libraryDatabase
-                .listBooksInHandsOf(libraryUser);
-        borrowedBookList = secondResultList;
-
-        return borrowedBookList;
-
+        return libraryDatabase.listBooksInHandsOf(libraryUser);
     }
 }
