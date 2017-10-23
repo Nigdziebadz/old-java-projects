@@ -10,7 +10,9 @@ public class WorldTestSuite {
     @Test
     public void testGetPeopleQuantity() {
         //Given
-        Country poland = new Country("Poland", new BigDecimal("4567898765456789"));
+        String s = "poland";
+        BigDecimal bd = new BigDecimal("4567898765456789");
+        Country poland = new Country(s, bd);
         Country germany = new Country("Poland", new BigDecimal("123456765432342"));
         Country france = new Country("Poland", new BigDecimal("7656789087653243"));
         Country egipt = new Country("Poland", new BigDecimal("65789876543234567"));
