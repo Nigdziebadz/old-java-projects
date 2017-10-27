@@ -17,7 +17,7 @@ public class FirstChallenge {
             double result = firstChallenge.divide(3, 0);
             System.out.println(result);
         } catch (ArithmeticException e) {
-            System.out.println("You cannot divide by 0!");
+            System.out.println("You cannot divide by 0! Error: " + e);
         } finally {
             System.out.println("Conversion completed");
         }
