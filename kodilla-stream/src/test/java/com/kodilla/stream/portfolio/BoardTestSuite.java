@@ -142,24 +142,28 @@ public class BoardTestSuite {
         Board project = prepareTestData();
 
         //When
-        List<TaskList> inProgressTasks = new ArrayList<>();
+    List<TaskList> inProgressTasks = new ArrayList<>();
         inProgressTasks.add(new TaskList("In progress"));
-        long howManyTasks = project.getTaskLists().stream()
-                .filter(inProgressTasks::contains)
-                .flatMap(l -> l.getTasks().stream())
-                .count();
+//    long howManyTasks = project.getTaskLists().stream()
+//            .filter(inProgressTasks::contains)
+//            .flatMap(l -> l.getTasks().stream())
+//            .count();
 
-       long averageHowMuchTimePassedSinceStart = project.getTaskLists().stream()
-               .filter(inProgressTasks::contains)
-               .flatMap(t -> t.getTasks().stream())
-               .map(tl -> LocalDate.now().toEpochDay() - tl.getCreated().toEpochDay())
-               .reduce(0L, (sum, current) -> sum += current);
+    double averageHowMuchTimePassedSinceStart = project.getTaskLists().stream()
+            .filter(inProgressTasks::contains)
+            .flatMap(t -> t.getTasks().stream())
+            .map(tl -> LocalDate.now().toEpochDay() - tl.getCreated().toEpochDay())
+            .mapToInt(n -> n.intValue())
+            .average().orElse(0.0);
 
-       double result = averageHowMuchTimePassedSinceStart / howManyTasks;
+        System.out.println(averageHowMuchTimePassedSinceStart);
+//            .reduce(0L, (sum, current) -> sum += current);
 
-        //Then
-        Assert.assertEquals(3, howManyTasks);
-        Assert.assertEquals(10, result, 0);
-        }
+//    double result = averageHowMuchTimePassedSinceStart / howManyTasks;
+//
+//    //Then
+//        Assert.assertEquals(3, howManyTasks);
+        Assert.assertEquals(10, averageHowMuchTimePassedSinceStart, 0);
+}
 
 }
