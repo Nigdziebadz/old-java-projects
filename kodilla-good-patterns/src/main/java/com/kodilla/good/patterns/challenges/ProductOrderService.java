@@ -1,29 +1,30 @@
-import solid.*;
+package com.kodilla.good.patterns.challenges;
 
-public class RentalProcessor {
+public class ProductOrderService {
 
-    private InformationService informationService;
-    private RentalService rentalService;
-    private RentalRepository rentalRepository;
+    private SellInfoService sellInformationService;
+    private SellService sellService;
+    private SellRepository sellRepository;
 
-    public RentalProcessor(final InformationService informationService,
-                           final RentalService rentalService,
-                           final RentalRepository rentalRepository) {
-        this.informationService = informationService;
-        this.rentalService = rentalService;
-        this.rentalRepository = rentalRepository;
+    public ProductOrderService(final SellInfoService sellInformationService,
+                         final SellService sellService,
+                         final SellRepository sellRepository) {
+        this.sellInformationService = sellInformationService;
+        this.sellService = sellService;
+        this.sellRepository = sellRepository;
     }
 
-    public RentalDto process(final RentRequest rentRequest) {
-        boolean isRented = rentalService.rent(rentRequest.getUser(), rentRequest.getFrom(),
-                rentRequest.getTo());
+    public SellDto process(final SoldRequest soldRequest) {
+        boolean isSold = sellService.createTransaction(soldRequest.getUser(), soldRequest.getWhen(),
+                soldRequest.getItemName(), soldRequest.getItemQnt());
 
-        if(isRented) {
-            informationService.inform(rentRequest.getUser());
-            rentalRepository.createRental(rentRequest.getUser(), rentRequest.getFrom(), rentRequest.getTo());
-            return new RentalDto(rentRequest.getUser(), true);
+        if(isSold) {
+            sellInformationService.sendInfo(soldRequest.getUser());
+            sellRepository.createTransaction(soldRequest.getUser(), soldRequest.getWhen(),
+                    soldRequest.getItemName(), soldRequest.getItemQnt());
+            return new SellDto(soldRequest.getUser(), true);
         } else {
-            return new RentalDto(rentRequest.getUser(), false);
+            return new SellDto(soldRequest.getUser(), false);
         }
     }
 }
