@@ -4,4 +4,5 @@ include 'exception'
 include 'kodilla-exception'
 include 'kodilla-good-patterns'
 include 'kodilla-own-tests'
+include 'kodilla-spring-intro'
 
