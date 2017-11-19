@@ -1,10 +1,10 @@
 package com.kodilla.good.patterns.flightplan;
 
-public class Flight {
-    String departureAirport;
-    String arrivalAirport;
+public final class Flight {
+    final String departureAirport;
+    final String arrivalAirport;
 
-    public Flight(String departureAirport, String arrivalAirport) {
+    public Flight(final String departureAirport, final String arrivalAirport) {
         this.departureAirport = departureAirport;
         this.arrivalAirport = arrivalAirport;
     }
@@ -34,5 +34,12 @@ public class Flight {
         int result = departureAirport != null ? departureAirport.hashCode() : 0;
         result = 31 * result + (arrivalAirport != null ? arrivalAirport.hashCode() : 0);
         return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Flight: " +
+                "departureAirport= '" + departureAirport + '\'' +
+                ", arrivalAirport= '" + arrivalAirport + '\'';
     }
 }
