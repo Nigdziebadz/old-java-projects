@@ -7,12 +7,13 @@ public final class FlightRequestRetriever {
 
     public FlightRequestRetriever() {
         Flight newFlight1 = new Flight("Gdansk", "Gdynia");
-        Flight newFlight2 = new Flight("Gdansk", "Warszawa");
+        Flight newFlight2 = new Flight("Gdansk", "Bialystok");
         Flight newFlight3 = new Flight("Gdansk", "Poznan");
-        Flight newFlight4 = new Flight("Gdansk", "Katowice");
-        Flight newFlight5 = new Flight("Warszawa", "Gdansk");
+        Flight newFlight4 = new Flight("Gdansk", "Krakow");
+        Flight newFlight5 = new Flight("Krakow", "Wroclaw");
         Flight newFlight6 = new Flight("Poznan", "Katowice");
-        Flight newFlight7 = new Flight("Katowice", "Gdansk");
+        Flight newFlight7 = new Flight("Katowice", "Warszawa");
+        Flight newFlight8 = new Flight("Katowice", "Gdansk");
 
         flightList.add(newFlight1);
         flightList.add(newFlight2);
@@ -21,10 +22,11 @@ public final class FlightRequestRetriever {
         flightList.add(newFlight5);
         flightList.add(newFlight6);
         flightList.add(newFlight7);
+        flightList.add(newFlight8);
 
     }
 
-    public HashSet<Flight> getFlightList() {
+    public HashSet<Flight> getFlightSet() {
         return new HashSet<>(flightList);
     }
 

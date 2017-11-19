@@ -1,8 +1,8 @@
 package com.kodilla.good.patterns.flightplan;
 
 public final class Flight {
-    final String departureAirport;
-    final String arrivalAirport;
+    final private String departureAirport;
+    final private String arrivalAirport;
 
     public Flight(final String departureAirport, final String arrivalAirport) {
         this.departureAirport = departureAirport;

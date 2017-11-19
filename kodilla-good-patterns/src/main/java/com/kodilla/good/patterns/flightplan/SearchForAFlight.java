@@ -3,17 +3,16 @@ package com.kodilla.good.patterns.flightplan;
 public class SearchForAFlight {
 
     public static void main(String args[]) {
-        FlightRequestRetriever searchForAFlight = new FlightRequestRetriever();
 
-        searchForAFlight.getFlightList().stream()
-                .filter(flight -> flight.departureAirport == "Gdansk")
-                .forEach(System.out::println);
-        System.out.println("End of flights from Gdansk");
+        System.out.println("Flight From Gdansk");
+        System.out.println(FlightService.findFlightFrom("Gdansk"));
 
-        searchForAFlight.getFlightList().stream()
-                .filter(flight -> flight.arrivalAirport == "Gdansk")
-                .forEach(System.out::println);
-        System.out.println("End of flights to Gdansk");
+        System.out.println("Flight To Gdansk");
+        System.out.println(FlightService.findFlightTo("Gdansk"));
+
+        System.out.println("Flight From Gdansk to Wroclaw");
+        System.out.println(FlightService.findFlightThrough("Gdansk", "Wroclaw", "Krakow"));
+
 
     }
 
