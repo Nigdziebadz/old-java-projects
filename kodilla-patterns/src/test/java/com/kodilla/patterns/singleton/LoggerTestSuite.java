@@ -4,14 +4,15 @@ import org.junit.Assert;
 import org.junit.Test;
 
 public class LoggerTestSuite {
+    private Logger logger = Logger.getInstance();
 
     @Test
     public void testGetLastLog() {
         //Given
-        Logger.getInstance().log("Last log of the last log on earth");
+        logger.log("Last log of the last log on earth");
 
         //When
-        String checkLog = Logger.getInstance().getLastLog();
+        String checkLog = logger.getLastLog();
 
         //Then
         Assert.assertEquals(checkLog, "Last log of the last log on earth");
