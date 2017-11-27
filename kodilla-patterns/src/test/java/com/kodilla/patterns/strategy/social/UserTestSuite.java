@@ -1,10 +1,6 @@
-package com.kodilla.patterns.com.kodilla.patterns.strategy.social;
+package com.kodilla.patterns.strategy.social;
 
 import com.kodilla.patterns.strategy.publishers.PublishByTwitter;
-import com.kodilla.patterns.strategy.social.FacebookPublisher;
-import com.kodilla.patterns.strategy.social.SnapchatPublisher;
-import com.kodilla.patterns.strategy.social.TwitterPublisher;
-import com.kodilla.patterns.strategy.social.User;
 import org.junit.Assert;
 import org.junit.Test;
 
