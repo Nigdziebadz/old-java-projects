@@ -3,9 +3,6 @@ package com.kodilla.testing.library;
 import org.junit.AfterClass;
 import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Test;
-
-import static org.junit.Assert.assertTrue;
 
 public class BookDirectoryTestSuite {
     private static int testCounter = 0;
@@ -25,20 +22,20 @@ public class BookDirectoryTestSuite {
         testCounter++;
         System.out.println("starting test #" + testCounter);
     }
-
-    @Test
-    public void testListBooksWithConditionsReturnList() {
-        assertTrue(false);
-    }
-
-    @Test
-    public void testListBooksWithConditionMoreThan20() {
-        assertTrue(false);
-    }
-
-    @Test
-    public void testListBooksWithConditionFragmentShorterThan3() {
-        assertTrue(false);
-    }
+//
+//    @Test
+//    public void testListBooksWithConditionsReturnList() {
+//        assertTrue(false);
+//    }
+//
+//    @Test
+//    public void testListBooksWithConditionMoreThan20() {
+//        assertTrue(false);
+//    }
+//
+//    @Test
+//    public void testListBooksWithConditionFragmentShorterThan3() {
+//        assertTrue(false);
+//    }
 
 }
