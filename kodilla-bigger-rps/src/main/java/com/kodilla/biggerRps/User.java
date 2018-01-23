@@ -25,28 +25,32 @@ public class User {
         declaredNumberOfGames = sc.nextInt();
     }
 
-    public String getUserMove() {
+    public int getUserMove() {
         System.out.println("Select  (1)ROCK  (2)PAPER (3)SCISSORS (4)SPOCK (5)LIZARD");
         System.out.println("or press 'x' for exit, or 'n' for a new game");
-        String input = sc.next();
-        if (input == "1")
-            return BiggerRSPLogic.ROCK;
-        else if (input == "2")
-            return BiggerRSPLogic.PAPER;
-        else if (input == "3")
-            return BiggerRSPLogic.SCISSORS;
-        else if (input == "4")
-            return BiggerRSPLogic.SPOCK;
-        else if (input == "5")
-            return BiggerRSPLogic.LIZARD;
-        else if (input == "n")
-            return BiggerRSPLogic.NEWGAME;
-        else if (input == "x")
-            return BiggerRSPLogic.EXIT;
-        else {
-            return getUserMove();
+        while(true) {
+            String s = sc.nextLine().toLowerCase();
+            switch (s) {
+                case "1":
+                    return BiggerRSPLogic.ROCK;
+                case "2":
+                    return BiggerRSPLogic.PAPER;
+                case "3":
+                    return BiggerRSPLogic.SCISSORS;
+                case "4":
+                    return BiggerRSPLogic.SPOCK;
+                case "5":
+                    return BiggerRSPLogic.LIZARD;
+                case "x":
+                    return BiggerRSPLogic.EXIT;
+                case "n":
+                    return BiggerRSPLogic.NEWGAME;
+                default:
+                    System.out.println("Wrong selection, try again");
+
             }
         }
+    }
 
 
     public boolean anotherGame() {

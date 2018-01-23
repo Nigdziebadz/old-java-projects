@@ -2,15 +2,15 @@ package com.kodilla.biggerRps;
 
 public class BiggerRSPLogic {
 
-    public static final String ROCK = "1";
-    public static final String LIZARD = "2";
-    public static final String SPOCK = "3";
-    public static final String SCISSORS = "4";
-    public static final String PAPER = "5";
-    public static final String EXIT = "x";
-    public static final String NEWGAME = "n";
+    public static final int ROCK = 1;
+    public static final int LIZARD = 2;
+    public static final int SPOCK = 3;
+    public static final int SCISSORS = 4;
+    public static final int PAPER = 5;
+    public static final int EXIT = 6;
+    public static final int NEWGAME = 7;
 
-    public static void logic(String who, String s) {
+    public static void logic(String who, int s) {
         switch (s) {
             case BiggerRSPLogic.ROCK:
                 System.out.print(who + " selected ROCK   ");
@@ -32,7 +32,7 @@ public class BiggerRSPLogic {
         }
     }
 
-    public static int compareMoves(String userSelection, String computerSelection) {
+    public static int compareMoves(int userSelection, int computerSelection) {
         if (userSelection == ROCK && computerSelection == PAPER) {
             return 1;
         } else if (userSelection == ROCK && computerSelection == LIZARD) {

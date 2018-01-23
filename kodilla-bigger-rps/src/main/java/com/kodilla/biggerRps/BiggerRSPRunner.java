@@ -24,10 +24,21 @@ public class BiggerRSPRunner {
     }
 
     public void startGame() {
-        while(user.getDeclaredNumberOfGames() > userScore) {
-            String userInput = user.getUserMove();
+
+        while (user.getDeclaredNumberOfGames() > userScore && user.getDeclaredNumberOfGames() > aiScore) {
+            int userInput = user.getUserMove();
+            if (userInput == BiggerRSPLogic.NEWGAME) {
+                userScore = 0;
+                aiScore = 0;
+                numberOfGames = 1;
+                continue;
+            }
+            if (userInput == BiggerRSPLogic.EXIT) {
+                break;
+            }
+
             BiggerRSPLogic.logic(user.getUserName(), userInput);
-            String compInput = ai.getAIMove();
+            int compInput = ai.getAIMove();
             BiggerRSPLogic.logic("AI", compInput);
             int compareResult = BiggerRSPLogic.compareMoves(userInput, compInput);
 
@@ -61,8 +72,10 @@ public class BiggerRSPRunner {
         }
 
         if (user.anotherGame()) {
-            System.out.println();
-            startGame();
+            BiggerRSPRunner rps = new BiggerRSPRunner();
+            rps.getplayerName();
+            rps.getNumberOfGames();
+            rps.startGame();
         } else {
             printStats();
         }
