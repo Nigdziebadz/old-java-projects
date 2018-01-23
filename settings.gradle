@@ -9,4 +9,5 @@ include 'kodilla-spring'
 include 'kodilla-jdbc'
 include 'kodilla-hibernate'
 include 'kodilla-rps'
+include 'kodilla-bigger-rps'
 

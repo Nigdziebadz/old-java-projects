@@ -28,16 +28,23 @@ public class User {
     public int getInput() {
         System.out.println("Select  (1)ROCK  (2)PAPER (3)SCISSORS");
         System.out.println("or press 'x' for exit, or 'n' for a new game");
-        int input = sc.nextInt();
-        if (input == 1)
-            return Logic.ROCK;
-        else if (input == 2)
-            return Logic.PAPER;
-        else if (input == 3)
-            return Logic.SCISSORS;
-        else {
-            getInput();
-            return 0;
+        while(true) {
+            String s = sc.nextLine().toLowerCase();
+            switch (s) {
+                case "1":
+                    return Logic.ROCK;
+                case "2":
+                    return Logic.PAPER;
+                case "3":
+                    return Logic.SCISSORS;
+                case "x":
+                    return Logic.EXIT;
+                case "n":
+                    return Logic.NEW_GAME;
+                default:
+                    System.out.println("Wrong selection, try again");
+
+            }
         }
     }
 

@@ -16,7 +16,6 @@ public class RPSRunner {
     }
 
     public static void main(String[] args) {
-
         RPSRunner rps = new RPSRunner();
         rps.getplayerName();
         rps.getNumberOfGames();
@@ -25,8 +24,18 @@ public class RPSRunner {
 
     public void startGame() {
 
-        while (user.getSetNumberOfGames() > userScore) {
+        while (user.getSetNumberOfGames() > userScore && user.getSetNumberOfGames() > compScore) {
             int userInput = user.getInput();
+            if (userInput == Logic.NEW_GAME) {
+                userScore = 0;
+                compScore = 0;
+                numberOfGames = 1;
+                continue;
+            }
+            if (userInput == Logic.EXIT) {
+                break;
+            }
+
             Logic.logic(user.getName(), userInput);
             int compInput = comp.getInput();
             Logic.logic("computer", compInput);
@@ -61,8 +70,10 @@ public class RPSRunner {
         }
 
         if (user.playAgain()) {
-            System.out.println();
-            startGame();
+            RPSRunner rps = new RPSRunner();
+            rps.getplayerName();
+            rps.getNumberOfGames();
+            rps.startGame();
         } else {
             printStats();
         }
