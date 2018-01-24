@@ -1,4 +1,4 @@
-package com.kodilla.rps;
+package com.kodilla.rsp;
 
 public class Logic {
 
