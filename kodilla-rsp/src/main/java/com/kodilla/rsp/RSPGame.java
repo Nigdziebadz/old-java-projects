@@ -1,6 +1,6 @@
 package com.kodilla.rsp;
 
-public class RPSGame {
+public class RSPGame {
     private UserMoves user;
     private CompMoves comp;
     private UserComm userComm;
@@ -16,7 +16,7 @@ public class RPSGame {
         userComm.setNumberOfGames();
     }
 
-    public RPSGame() {
+    public RSPGame() {
         user = new UserMoves();
         comp = new CompMoves();
         userComm = new UserComm();
@@ -26,7 +26,7 @@ public class RPSGame {
     }
 
     public void runGame() {
-        RPSGame rps = new RPSGame();
+        RSPGame rps = new RSPGame();
         rps.getplayerName();
         rps.getNumberOfGames();
         rps.startGame();
@@ -75,17 +75,17 @@ public class RPSGame {
             if (userScore == userComm.getSetNumberOfGames()) {
                 System.out.println(userComm.getName() + " has won with "
                         + userComm.getSetNumberOfGames());
-                new RPSRunner();
+                new RSPRunner();
             }
             if (compScore == userComm.getSetNumberOfGames()) {
                 System.out.println("Computer " + " has won with "
                         + userComm.getSetNumberOfGames());
-                new RPSRunner();
+                new RSPRunner();
             }
         }
 
         if (userComm.playAgain()) {
-            RPSGame rps = new RPSGame();
+            RSPGame rps = new RSPGame();
             rps.getplayerName();
             rps.getNumberOfGames();
             rps.startGame();
