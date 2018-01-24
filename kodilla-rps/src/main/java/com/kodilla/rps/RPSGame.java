@@ -2,7 +2,7 @@ package com.kodilla.rps;
 
 public class RPSGame {
     private UserMoves user;
-    private Comp comp;
+    private CompMoves comp;
     private UserComm userComm;
     private int userScore;
     private int compScore;
@@ -18,7 +18,7 @@ public class RPSGame {
 
     public RPSGame() {
         user = new UserMoves();
-        comp = new Comp();
+        comp = new CompMoves();
         userComm = new UserComm();
         userScore = 0;
         compScore = 0;

@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 
-public class Comp {
+public class CompMoves {
 
     public int getInput() {
         List<Integer> computerMoves = Arrays.asList(1, 2, 3);
