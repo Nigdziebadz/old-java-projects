@@ -1,6 +1,5 @@
 package com.kodilla.patterns2.facade;
 
-import javafx.scene.layout.BackgroundImage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
