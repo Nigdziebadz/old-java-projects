@@ -11,9 +11,9 @@ import java.util.List;
         resultClass = Company.class
 )
 @NamedQuery(
-        name = "Company.searchByName",
+        name = "Company.searchByNameFragment",
         query = "FROM Company WHERE name LIKE :ARG"
-)
+        )
 
 @Entity
 @Table(name = "COMPANIES")
