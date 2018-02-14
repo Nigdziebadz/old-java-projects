@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class SalaryAdapter extends SalaryAdaptee implements SalaryCalculator {
+
     @Override
     public double TotalSalary(String [] [] workers, double[] salaries) {
         List<Employee> employeeList = new ArrayList<>();
