@@ -4,21 +4,15 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BoardRow {
-    private List<Integer> numbers = new ArrayList<>();
+    private List<SudokuElement> cols = new ArrayList<>();
 
     public BoardRow() {
         for (int n = 0; n < 9; n++ ) {
-            numbers.add(Board.EMPTY);
+            cols.add(new SudokuElement());
         }
     }
 
-    public int getNumber(int index) {
-        return numbers.get(index);
-    }
-
-    public void setNumber(int index, int number) {
-        numbers.add(index, number);
-        numbers.remove(index+1);
-
+    public List<SudokuElement> getCols() {
+        return cols;
     }
 }
