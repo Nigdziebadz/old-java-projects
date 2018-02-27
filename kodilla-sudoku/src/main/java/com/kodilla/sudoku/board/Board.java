@@ -35,6 +35,7 @@ public class Board {
                     s += " " + element.getValue() + " |";
                 } else {
                     s += "   |";
+//                    s += "(" + element.getAllowedValues().size() + ")|";
                 }
             }
             s += "\n|===|===|===|===|===|===|===|===|===|";

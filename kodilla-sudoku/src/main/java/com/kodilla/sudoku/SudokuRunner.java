@@ -1,11 +1,32 @@
-package com.kodilla.sudoku.board;
+package com.kodilla.sudoku;
 
-import com.kodilla.sudoku.SudokuGame;
-import org.junit.Test;
+import com.kodilla.sudoku.board.Board;
+import com.kodilla.sudoku.input.UserDialogs;
 
-public class BoardTestSuite {
+public class SudokuRunner {
 
-    private void generateTestData(Board board) {
+    public static void main(String[] args) {
+        SudokuGame game = new SudokuGame();
+
+        while(true) {
+            System.out.println(game.getBoard());
+            String input = UserDialogs.getOneData();
+            if (input.equalsIgnoreCase("Q")) {
+                break;
+            }
+            if (input.equalsIgnoreCase("E")) {
+                fillExampleData(game.getBoard());
+            } else {
+                int x = Integer.parseInt(input.substring(0, 1));
+                int y = Integer.parseInt(input.substring(1, 2));
+                int v = Integer.parseInt(input.substring(2));
+                game.getBoard().setElement(y, x, v);
+            }
+        }
+        game.resolveSudoku();
+    }
+
+    private static void fillExampleData(Board board) {
         board.setElement(0, 3, 2);
         board.setElement(0, 8, 3);
         board.setElement(1, 1, 7);
@@ -34,15 +55,5 @@ public class BoardTestSuite {
         board.setElement(7, 7, 5);
         board.setElement(8, 0, 6);
         board.setElement(8, 5, 1);
-
-    }
-
-    @Test
-    public void testBoard() {
-        SudokuGame sudokuGame = new SudokuGame();
-        generateTestData(sudokuGame.getBoard());
-//        System.out.println(sudokuGame.getBoard());
-        sudokuGame.resolveSudoku();
-
     }
 }
