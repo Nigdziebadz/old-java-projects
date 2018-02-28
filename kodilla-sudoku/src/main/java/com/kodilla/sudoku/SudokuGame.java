@@ -30,9 +30,12 @@ public class SudokuGame {
             for (int row = 0; row < 9; row++) {
                 for (int col = 0; col < 9; col++) {
                     if (board.getRows().get(row).getCols().get(col).getValue() == EMPTY) {
-                        if (board.getRows().get(row).getCols().get(col).getAllowedValues().size() == 1) {
-                            Integer value = board.getRows().get(row).getCols().get(col).getAllowedValues().get(0);
-                            board.getRows().get(row).getCols().get(col).setValue(value);
+                        if (board.getRows().get(row)
+                                .getCols().get(col).getAllowedValues().size() == 1) {
+                            Integer value = board.getRows()
+                                    .get(row).getCols().get(col).getAllowedValues().get(0);
+                            board.getRows()
+                                    .get(row).getCols().get(col).setValue(value);
                             modified = true;
                         }
                     }
@@ -46,18 +49,22 @@ public class SudokuGame {
 
     private void removeAllFromCol(int row, int col) {
         for (int scannedCol = 0; scannedCol < 9; scannedCol++) {
-            Integer value = board.getRows().get(row).getCols().get(scannedCol).getValue();
+            Integer value = board.getRows().get(row).getCols()
+                    .get(scannedCol).getValue();
             if (value != EMPTY) {
-                board.getRows().get(row).getCols().get(col).getAllowedValues().remove(value);
+                board.getRows().get(row).getCols().get(col)
+                        .getAllowedValues().remove(value);
             }
         }
     }
 
     private void removeAllFromRow(int row, int col) {
         for (int scannedRow = 0; scannedRow < 9; scannedRow++) {
-            Integer value = board.getRows().get(scannedRow).getCols().get(col).getValue();
+            Integer value = board.getRows().get(scannedRow)
+                    .getCols().get(col).getValue();
             if (value != EMPTY) {
-                board.getRows().get(row).getCols().get(col).getAllowedValues().remove(value);
+                board.getRows().get(row).getCols().get(col)
+                        .getAllowedValues().remove(value);
             }
         }
     }
@@ -68,9 +75,11 @@ public class SudokuGame {
 
         for (int scannedRow = 0; scannedRow < 3; scannedRow++) {
             for (int scannedCol = 0; scannedCol < 3; scannedCol++) {
-                Integer value = board.getRows().get(scannedRow + squareY * 3).getCols().get(scannedCol + squareX * 3).getValue();
+                Integer value = board.getRows().get(scannedRow + squareY * 3)
+                        .getCols().get(scannedCol + squareX * 3).getValue();
                 if (value != EMPTY)
-                    board.getRows().get(row).getCols().get(col).getAllowedValues().remove(value);
+                    board.getRows().get(row).getCols().get(col).getAllowedValues()
+                            .remove(value);
             }
         }
     }

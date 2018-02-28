@@ -11,7 +11,7 @@ public class UserDialogs {
 
         while(true) {
             System.out.println("Type value in format XYV (X: 0-8, Y: 0-8, V: 1-9) " +
-                    "or type Q to quit and resolve Sudoku. (E - example)");
+                    "or type Q to quit and resolve Sudoku. (E - load example data)");
 
             result = scanner.nextLine();
             if (result.equalsIgnoreCase("Q")) {
