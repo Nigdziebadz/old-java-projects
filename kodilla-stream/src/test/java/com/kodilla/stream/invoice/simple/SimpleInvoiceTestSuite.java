@@ -3,7 +3,7 @@ package com.kodilla.stream.invoice.simple;
 import org.junit.Assert;
 import org.junit.Test;
 
-public class SimpleInvoiceTestSuite {
+public class    SimpleInvoiceTestSuite {
 
     @Test
     public void testGetValueToPay() {
